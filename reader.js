@@ -1,6 +1,8 @@
 const pattern = require("./pattern"),
     fs = require('fs');
 
+let isStarted = false;
+
 /**
  * read a file and return html string
  * @param {String} filepath
@@ -26,11 +28,36 @@ function read(str) {
     let newLines = [];
     for (let i = 0, len = lines.length; i < len; i++)
         newLines.push(pattern.executeLine(lines[i]));
-    return newLines.join('\n');
+    let html = newLines.join('\n');
+    return pattern.executeMultiLine(html);
 }
 
-module.exports = {
+let expor = {
     read,
     readFile,
-    createLinePattern: pattern.createLinePattern
+    createLinePattern: pattern.createLinePattern,
+    createMultiLinePattern: pattern.createMultiLinePattern
 };
+
+function init() {
+    if (isStarted)
+        return expor;
+    isStarted = true;
+    try {
+        let item = fs.readdirSync('modules');
+        item = item.map((val) => {
+            if (val.endsWith(".js"))
+                return val;
+            return undefined;
+        });
+        item = item.filter(function (el) {return el != null;}); // remove undefined
+        for (let i = 0, len = item.length; i < len; i++) {
+            require('./modules/' + item[i].slice(0, -3))();
+        }
+    } catch (e) {
+        throw "[classic] 'modules' directory not found " + e;
+    }
+    return expor;
+}
+
+module.exports = init;
