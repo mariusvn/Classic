@@ -1,0 +1,26 @@
+{
+  "name": "classic",
+  "version": "1.0.0",
+  "description": "Another Markup language",
+  "main": "reader.js",
+  "dependencies": {
+    "html5-tag": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariusvn/Classic.git"
+  },
+  "keywords": [
+    "markup"
+  ],
+  "author": "Marius Van Nieuwenhuyse",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mariusvn/Classic/issues"
+  },
+  "homepage": "https://github.com/mariusvn/Classic#readme"
+}
