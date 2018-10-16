@@ -1,4 +1,4 @@
-const pattern = require("pattern"),
+const pattern = require("./pattern"),
     fs = require('fs');
 
 /**

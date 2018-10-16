@@ -7,17 +7,21 @@
  * @property {Number} priority
  */
 
+
 /**
  * List of all registered LinePatterns
  * @type {Array<LinePattern>}
  */
 let linePatternList = [];
 
+
 /**
  * list of all priority presents in the linePatternList
  * @type {Array<Number>}
  */
 let priorityList = [];
+
+
 /**
  * Create a LinePattern.
  * @param {String} name size from 1 to 256
@@ -41,6 +45,7 @@ function createLinePattern(name, handler, priority) {
     return pattern;
 }
 
+
 /**
  * Handle the line with all LinePatterns
  * @param {String} line
@@ -60,6 +65,7 @@ function executeLine(line) {
     }
     return line;
 }
+
 
 module.exports = {
     createLinePattern,
