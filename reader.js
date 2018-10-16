@@ -19,3 +19,8 @@ function read(filepath) {
         newLines.push(pattern.executeLine(lines[i]));
     return newLines.join('\n');
 }
+
+module.exports = {
+    read,
+    createLinePattern: pattern.createLinePattern
+};
