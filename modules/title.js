@@ -4,8 +4,12 @@ const classic = require("../reader")(),
 let handler = function(line) {
     let regex = /^(#{1,4}) (.*)$/;
     let match = line.match(regex);
-    if (match)
+    if (match) {
         line = tag('h' + match[1].length, {}, match[2]);
+        if (match[1].length === 1)
+            line += tag('hr', {});
+        line = tag('div', {class: "title-underline"}, line);
+    }
     return line;
 };
 

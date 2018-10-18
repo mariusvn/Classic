@@ -1,9 +1,10 @@
 {
   "name": "classic-markup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Another Markup language",
   "main": "reader.js",
   "dependencies": {
+    "ejs": "^2.6.1",
     "html5-tag": "^0.3.0"
   },
   "devDependencies": {},

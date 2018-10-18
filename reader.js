@@ -1,5 +1,6 @@
 const pattern = require("./pattern"),
-    fs = require('fs');
+    fs = require('fs'),
+    exporter = require('./export/export');
 
 let isStarted = false;
 
@@ -36,7 +37,8 @@ let expor = {
     read,
     readFile,
     createLinePattern: pattern.createLinePattern,
-    createMultiLinePattern: pattern.createMultiLinePattern
+    createMultiLinePattern: pattern.createMultiLinePattern,
+    exporter: exporter
 };
 
 function init() {
