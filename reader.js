@@ -44,7 +44,7 @@ function init() {
         return expor;
     isStarted = true;
     try {
-        let item = fs.readdirSync('modules');
+        let item = fs.readdirSync(__dirname + '/modules');
         item = item.map((val) => {
             if (val.endsWith(".js"))
                 return val;
@@ -52,7 +52,7 @@ function init() {
         });
         item = item.filter(function (el) {return el != null;}); // remove undefined
         for (let i = 0, len = item.length; i < len; i++) {
-            require('./modules/' + item[i].slice(0, -3))();
+            require(__dirname + '/modules/' + item[i].slice(0, -3))();
         }
     } catch (e) {
         throw "[classic] 'modules' directory not found " + e;
