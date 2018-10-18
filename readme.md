@@ -1,22 +1,15 @@
-<br>
-
 # Classic.
-
-<br><br>
-Classic is a markup language
-<br><br><br>
-
-working on description ...
+Welcome to Classic.
 
 <br>
 
----
+The main goal of Classic is educative, i wanted to make this utility to learn. It already
+exists in better:
 
-Credits:
-
-Marius Van Nieuwenhuyse
-
-Usage of package "html5-tag" from cheton
-
+### Markdown.
 <br>
-All about license in LICENSE file.
+To use the Classic Markup Compiler just use
+
+```
+npm install classic-markup
+```
